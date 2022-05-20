@@ -1,9 +1,10 @@
 import {FC, Fragment, useEffect, useState} from "react";
 import {Button, Table} from "react-bootstrap";
 import ProductModel from '../../model/Product';
+import {useNavigate} from "react-router-dom";
 
 const Products: FC<any> = () => {
-
+    const navigate = useNavigate();
     const API: string = "http://localhost:3000/product";
 
     const [products, setProducts] = useState<Array<ProductModel>>([]);
@@ -18,9 +19,11 @@ const Products: FC<any> = () => {
     }, []);
 
     const deleteProduct = (id: number): void => {
-        fetch(API+ `/${id}`, {
+        fetch(API + `/${id}`, {
             method: "delete",
-        });
+        }).then((response: Response) => response.json())
+          .then((data: Array<ProductModel>) => setProducts(data))
+          .catch( err => setError(err));
     }
 
     return (
@@ -28,7 +31,7 @@ const Products: FC<any> = () => {
             <section className="heading">
                 <h1>Product</h1>
                 <div className="btn-group ">
-                    <Button variant="primary" size="sm" disabled>
+                    <Button variant="primary" size="sm" onClick={ () => navigate('/create-product') }>
                         Create new one
                     </Button>
                     <Button variant="secondary"  size="sm" disabled>

@@ -5,7 +5,7 @@
       "name": "test",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales elit risus. Curabitur fringilla dui ut turpis fermentum vestibulum. Donec nec ex id purus euismod condimentum. Integer sed ante vulputate, cursus nulla sed, condimentum neque. Ut lobortis mi risus, eu volutpat quam lobortis ac.",
       "picture": "",
-      "price" : 9.99,
+      "price": 9.99,
       "stock": 3,
       "isAvailable": true
     }
