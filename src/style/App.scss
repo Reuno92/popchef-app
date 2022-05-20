@@ -1,1 +1,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./Product";
+
+.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+  pointer-events: auto; // <== for real ? for show disabled button…
+  cursor: not-allowed !important;
+}
