@@ -18,8 +18,8 @@ const Header: FC<any> = () => {
                         <LinkContainer to="/">
                             <Nav.Link>Home</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/page">
-                            <Nav.Link>Page</Nav.Link>
+                        <LinkContainer to="/product">
+                            <Nav.Link>Product</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
