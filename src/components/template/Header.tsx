@@ -8,7 +8,7 @@ const Header: FC<any> = () => {
         <header>
             <Navbar bg="light" expand="lg" className="container-fluid">
                 <LinkContainer to={"/"} >
-                    <Navbar.Brand>React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand>PopChef Test</Navbar.Brand>
                 </LinkContainer>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
