@@ -4,16 +4,24 @@ import ProductModel from '../../model/Product';
 
 const Products: FC<any> = () => {
 
+    const API: string = "http://localhost:3000/product";
+
     const [products, setProducts] = useState<Array<ProductModel>>([]);
     const [error, setError] = useState<string|null>(null);
 
     useEffect( () => {
-        fetch('http://localhost:3000/product', {
+        fetch(API, {
             method: "get"
         }).then( response => response.json())
-            .then( data => setProducts(data))
-            .catch( err => setError(err) );
+          .then( data => setProducts(data))
+          .catch( err => setError(err) );
     }, []);
+
+    const deleteProduct = (id: number): void => {
+        fetch(API+ `/${id}`, {
+            method: "delete",
+        });
+    }
 
     return (
         <Fragment>
@@ -60,7 +68,7 @@ const Products: FC<any> = () => {
                                         <Button variant="primary" disabled>
                                             See
                                         </Button>
-                                        <Button variant="danger" disabled>
+                                        <Button variant="danger" onClick={() => deleteProduct(product?.id)}>
                                             Delete
                                         </Button>
                                     </div>
